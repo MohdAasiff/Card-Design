@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #cardContainer {
+      border: 2px solid #ccc;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      width: 300px; /* Increased width */
+      border: 1px solid #ccc;
+      margin: 10px;
+      padding: 15px; /* Increased padding */
+      transition: height 0.3s;
+    }
+
+    .card input[type="radio"] {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      margin-top: 10px;
+      display: none;
+      cursor: pointer;
+    }
+
+    .redio-sec {
+      display: flex;
+    }
+
+    .redio-sideText {
+      justify-content: space-between;
+      display: flex;
+      width: 100%;
+    }
+
+    .redio-sideText span {
+      margin-top: 2.5rem;
+    }
+    .green{
+        color: green;
+    }
+    .button{
+        background-color: darkgreen;
+        color: #ccc;
+        width: 95%;
+        padding: 10px 10px 10px 0px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    .button:hover{
+        background-color: red;
+        transition: 1s;
+    }
+    .Total{
+        justify-content: space-between;
+      display: flex;
+      width: 95%;
+       
+    }
+    .add-margin{
+        margin-bottom: 10px;
+    }
+    .d-flex{
+        display: flex;
+        justify-content: space-between;
+        width: 30%;
+        margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cardContainer">
+    <div class="card" id="card1">
+      <div class="redio-sec">
+        <input type="radio" name="card" onclick="toggleDropdown('dropdown1')">
+        <div class="redio-sideText">
+          <div>
+            <p>1 pair</p>
+            <h6>DKK 195.00</h6>
+          </div>
+          <span>50% OFF</span>
+        </div>
+      </div>
+      <div class="dropdown" id="dropdown1">
+       <div class="add-margin">
+      <div class="d-flex">
+        <p>size</p>
+        <p>color</p>
+      </div>
+        #1<select>
+            <option value="1">$</option>
+            <option value="2">color</option>
+          </select>
+          
+          <select>
+            <option value="3">color</option>
+            <option value="4">color</option>
+          </select>
+       </div>
+        <div>
+           #2<select>
+                <option value="1">$</option>
+                <option value="2">color</option>
+              </select>
+              <select>
+                <option value="3">color</option>
+                <option value="4">color</option>
+              </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card2">
+      <div class="redio-sec">
+        <input type="radio" name="card" onclick="toggleDropdown('dropdown2')">
+        <div class="redio-sideText">
+          <div>
+            <p>1 pair</p>
+            <h6>DKK 345.00</h6>
+          </div>
+          <div>
+            <p class="green">Most Popular</p>
+            <h3>40% OFF</h3>
+          </div>
+         
+   
+        </div>
+      </div>
+      <div class="dropdown" id="dropdown2">
+        <div  class="add-margin">
+            <div class="d-flex">
+                <p>size</p>
+                <p>color</p>
+              </div>
+            #1<select>
+                <option value="1">$</option>
+                <option value="2">color</option>
+              </select>
+              <select>
+                <option value="3">color</option>
+                <option value="4">color</option>
+              </select>
+           </div>
+            <div  >
+               #2<select>
+                    <option value="1">$</option>
+                    <option value="2">color</option>
+                  </select>
+                  <select>
+                    <option value="3">color</option>
+                    <option value="4">color</option>
+                  </select>
+            </div>
+      </div>
+    </div>
+
+    <div class="card" id="card3">
+      <div class="redio-sec">
+        <input type="radio" name="card" onclick="toggleDropdown('dropdown3')">
+        <div class="redio-sideText">
+          <div>
+            <p>1 pair</p>
+            <h6>DKK 528.00</h6>
+          </div>
+          <span>60% OFF</span>
+        </div>
+      </div>
+      <div class="dropdown" id="dropdown3">
+        <div  class="add-margin" >
+            <div class="d-flex">
+                <p>size</p>
+                <p>color</p>
+              </div>
+            #1<select>
+                <option value="1">$</option>
+                <option value="2">color</option>
+              </select>
+              <select>
+                <option value="3">color</option>
+                <option value="4">color</option>
+              </select>
+           </div>
+            <div>
+               #2<select>
+                    <option value="1">$</option>
+                    <option value="2">color</option>
+                  </select>
+                  <select>
+                    <option value="3">color</option>
+                    <option value="4">color</option>
+                  </select>
+            </div>
+    </div>
+   
+  </div>
+  <div class="Total">
+    <p>Free two day shiping</p>
+    <h4>Total:DKK 360.00</h4>
+  </div>
+
+  <button class="button">+Add to card</button>
+  <script>
+    function toggleDropdown(dropdownId) {
+      const dropdown = document.getElementById(dropdownId);
+      const allDropdowns = document.querySelectorAll('.dropdown');
+      allDropdowns.forEach((dropdown) => {
+        if (dropdown.id !== dropdownId) {
+          dropdown.style.display = 'none';
+        }
+      });
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
